@@ -1,0 +1,14 @@
+{% extends "base_clear.html" %}
+
+{% block content %}
+    <header class="masthead">
+        <div class="container">
+                <div class="alert alert-warning" role="alert">
+                    ¿Está seguro que quiere borrar el perfil {{ student.name }}?
+                </div>
+                <div class="d-grid gap-1 col-4 mx-auto">
+                    <a type="submit" class="btn btn-warning" href="/delete/{{ student.id }}">Eliminar</a>
+                </div>
+        </div>
+    </header>
+{% endblock %}

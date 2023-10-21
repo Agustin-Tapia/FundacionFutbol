@@ -1,0 +1,66 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+    <form method="post">
+        <div class="mb-3">
+            <label for="inputName" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="inputName" placeholder="John" name="first_name">
+        </div>
+        <div class="mb-3">
+            <label for="inputLastName" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="inputLastName" placeholder="Doe" name="last_name">
+        </div>
+
+        <div class="col-4">
+            <label for="inputBloodType" class="form-label">Tipo de sangre</label>
+            <select class="form-select" aria-label="Default select example" id="inputBloodType" name="blood_type">
+                <option value="A_PLUS">A+</option>
+                <option value="A_LESS">A-</option>
+                <option value="B_PLUS">B+</option>
+                <option value="B_LESS">B-</option>
+                <option value="O_PLUS">0+</option>
+                <option value="O_LESS">0-</option>
+                <option value="AB_PLUS">AB+</option>
+                <option value="AB_LESS-">AB-</option>
+            </select><br>
+        </div>
+
+        <div class="col-4">
+            <label for="inputDateOfBirth" class="form-label">Fecha de nacimiento:</label>
+
+            <input type="date" id="inputDateOfBirth" name="date_of_birth" value="0000-00-00"
+                   min="1950-01-01" max="2023-12-31" class="form-control"/>
+        </div>
+
+        <div class="col-4">
+            <label for="inputGender" class="form-label">Genero</label>
+            <select class="form-select" aria-label="Default select example" id="inputGender" name="gender">
+                <option value="MALE">Masculino</option>
+                <option value="FEMALE">Femenino</option>
+                <option value="OTHER">Otro</option>
+            </select><br>
+        </div>
+
+        <div class="mb-3">
+            <label for="inputAdress" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="inputAdress" placeholder="Calle falsa 123" name="address">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputPhoneNumber" class="form-label">Numero de telefono</label>
+            <input type="text" class="form-control" id="inputPhoneNumber" placeholder="+57 310 0000000"
+                   name="phone_number">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="text" class="form-control" id="inputEmail" placeholder="johndoe@gmail.com" name="email">
+        </div>
+
+        <div class="d-grid gap-1 col-4 mx-auto">
+            <button type="submit" class="btn btn-success">Crear Profesor/a</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

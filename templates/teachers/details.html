@@ -1,0 +1,63 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+    <form method="post">
+
+        <div class="col-5">
+            <label for="inputName" class="form_label">Nuevo Nombre</label><br>
+            <input type="text" class="form-control" id="inputName" name="first_name" placeholder="Nuevo nombre"
+                   value="{{ teacher.first_name }}"
+                   {% if title=='Details' %}disabled{% endif %}><br>
+        </div>
+
+        <div class="col-5">
+            <label for="inputLastName" class="form_lable">Nuevo Nombre</label><br>
+            <input type="text" class="form-control" id="inputLastName" name="last_name" placeholder="Nuevo apellido"
+                   value="{{ teacher.last_name }}"
+                   {% if title=='Details' %}disabled{% endif %}><br>
+        </div>
+
+        <div class="col-4">
+            <label for="inputGender" class="form-label">Genero</label>
+            <select class="form-select" aria-label="Default select example" id="inputGender" name="gender">
+                <option value="MALE">Masculino</option>
+                <option value="FEMALE">Femenino</option>
+                <option value="OTHER">Otro</option>
+            </select><br>
+        </div>
+
+        <div class="col-4">
+            <label for="inputDateOfBirth" class="form-label">Fecha de nacimiento:</label><br>
+
+            <input type="date" id="inputDateOfBirth" name="date_of_birth" value="{{ teacher.date_of_birth }}"
+                   min="1950-01-01" max="2023-12-31" class="form-control"
+                   {% if title=='Details' %}disabled{% endif %}/>
+        </div>
+
+        <div class="col-4">
+            <label for="inputBloodType" class="form-label">Tipo de sangre</label>
+            <select class="form-select" arial-lable="Default select example" id="inputBloodType" name="blood_type"
+                    {% if title=='Details' %}disabled{% endif %}>
+                <option selected>Tipo de sangre</option>
+                <option value="A+" {% if teacher.blood_type=='A+' %} selected="selected" {% endif %}>A+</option>
+                <option value="A-" {% if teacher.blood_type=='A-' %} selected="selected" {% endif %}>A-</option>
+                <option value="B+" {% if teacher.blood_type=='B+' %} selected="selected" {% endif %}>B+</option>
+                <option value="B-" {% if teacher.blood_type=='B-' %} selected="selected" {% endif %}>B-</option>
+                <option value="AB+" {% if teacher.blood_type=='AB+' %} selected="selected" {% endif %}>AB+</option>
+                <option value="AB-" {% if teacher.blood_type=='AB-' %} selected="selected" {% endif %}>AB-</option>
+                <option value="O+" {% if teacher.blood_type=='O+' %} selected="selected" {% endif %}>0+</option>
+                <option value="O-" {% if teacher.blood_type=='O-' %} selected="selected" {% endif %}>0-</option>
+            </select><br>
+        </div>
+
+        {% if title!='Details' %}
+        <div class="d-grid gap-1 col-4 mx-auto">
+            <button type="submit" class="btn btn-success">Actualizar Profesor/a</button>
+        </div>
+        {% endif %}
+
+    </form>
+</div>
+
+{% endblock %}

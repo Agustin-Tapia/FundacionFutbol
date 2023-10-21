@@ -1,0 +1,11 @@
+<!-- Favicon-->
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', path='assets/favicon.ico') }}" />
+<!-- Font Awesome icons (free version)-->
+<script src="{{ url_for('static', path='js/fontawesome.com_releases_v6.3.0_js_all.js') }}"></script>
+<!-- Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="{{ url_for('static', path='css/styles.css') }}" rel="stylesheet" />
+{% block css %}
+{% endblock %}

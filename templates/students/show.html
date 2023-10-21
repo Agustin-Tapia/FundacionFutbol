@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <section class="page-section" id="students">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Estudiantes</h1>
+                </div>
+            </div>
+            <div class="row">
+                <a class="btn btn-success" href="/students/create" role="button">
+                    <i class="fa-solid fa-plus"></i> Crear estudiante
+                </a>
+            </div>
+            {% if students %}
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Tipo de sangre</th>
+                            <th scope="col">Fecha de nacimiento</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for student in students %}
+                            <tr>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.blood_type }}</td>
+                                <td>{{ student.date_of_birth }}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="/students/details/{{ student.id }}" role="button" title="Ver mas">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="btn btn-primary" href="/students/update/{{ student.id }}" role="button" title="Editar estudiante">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="btn btn-danger" href="/students/delete/{{ student.id }}" role="button" title="Eliminar estudiante">
+                                        <i class="fa fa-x"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <h1>No hay estudiantes en el momento</h1>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

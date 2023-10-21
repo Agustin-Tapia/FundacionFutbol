@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <section class="page-section" id="teachers">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Profesores</h1>
+                </div>
+            </div>
+            <div class="row">
+                <a class="btn btn-success" href="/teachers/create" role="button">
+                    <i class="fa-solid fa-plus"></i> Añadir profesor/a
+                </a>
+            </div>
+            {% if teachers %}
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Tipo de sangre</th>
+                            <th scope="col">Fecha de nacimiento</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for teacher in teachers %}
+                            <tr>
+                                <td>{{ teacher.first_name }} {{ teacher.last_name }}</td>
+                                <td>{{ teacher.blood_type }}</td>
+                                <td>{{ teacher.date_of_birth }}</td>
+                                <td>{{ teacher.email }}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="#" role="button" title="Ver mas">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="btn btn-primary" href="teachers/details/{{ teacher.id }}" role="button" title="Editar profesor/a">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="btn btn-danger" href="teachers/delete/{{ teacher.id }}" role="button" title="Eliminar profesor/a">
+                                        <i class="fa fa-x"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <h1>No hay profesores en el momento</h1>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

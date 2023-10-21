@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'base/header.html' %}
+    {% include 'base/css_s.html' %}
+</head>
+<body id="page-top">
+<!-- Navigation-->
+{% include 'base/navbar.html' %}
+<!-- Masthead-->
+{% include 'seccion/head.html' %}
+{% block content %}
+<!-- Services-->
+{% include 'seccion/services.html' %}
+<!-- Portfolio Grid-->
+{% include 'seccion/portfolio.html' %}
+<!-- About-->
+{% include 'seccion/about.html' %}
+<!-- Team-->
+{% include 'seccion/team.html' %}
+<!-- Contact-->
+{% include 'seccion/contact.html' %}
+<!-- Portfolio Modals-->
+{% endblock %}
+<!-- Footer-->
+{% include 'base/footer.html' %}
+<!-- Scripts core JS-->
+{% include 'base/scripts.html' %}
+</body>
+</html>

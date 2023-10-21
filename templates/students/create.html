@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="container">
+        <form method="post">
+
+            <div class="mb-3">
+                <label for="inputName" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="inputName" placeholder="John Doe" name="name">
+            </div>
+
+            <div class="col-4">
+                <label for="inputBloodType" class="form-label">Tipo de sangre</label>
+                <select class="form-select" arial-lable="Default select example" id="inputBloodType" name="blood_type">
+                    <option selected>Tipo de sangre</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="0+">0+</option>
+                    <option value="0-">0-</option>
+                </select><br>
+            </div>
+
+            <div class="col-4">
+                <label for="inputDateOfBirth" class="form-label">Fecha de nacimiento:</label>
+
+                <input type="date" id="inputDateOfBirth" name="date_of_birth"
+                       value="0000-00-00"
+                       min="1950-01-01" max="2023-12-31" class="form-control"/>
+            </div>
+            <div class="d-grid gap-1 col-4 mx-auto">
+                <button type="submit" class="btn btn-success">Crear estudiante</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+
